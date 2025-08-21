@@ -1,0 +1,126 @@
+.crypto-table-container {
+    width: 100%; /* Ajusta el ancho según necesites */
+    overflow-x: auto; /* Para evitar desbordamiento horizontal en pantallas pequeñas */
+  }
+  
+  .crypto-table {
+    width: 100%;
+    border-collapse: collapse; /* Colapsa los bordes de las celdas */
+    font-family: sans-serif; /* Fuente general */
+  }
+  
+  .crypto-table-header th {
+    padding: 12px 16px;
+    text-align: left;
+    background-color: #f7f7f7; /* Fondo del encabezado */
+    color: #4a5568; /* Color del texto del encabezado (gris más oscuro) */
+    font-size: 0.875rem; /* Equivalente a text-sm en Tailwind */
+    font-weight: 500; /* Equivalente a font-medium */
+    white-space: nowrap; /* Evita que el texto del encabezado se rompa */
+  }
+  
+  .crypto-table-body td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0; /* Línea divisoria entre filas */
+    font-size: 0.875rem; /* Equivalente a text-sm */
+    color: #2d3748; /* Color del texto del cuerpo (gris más oscuro) */
+  }
+  
+  .crypto-table-body tr:last-child td {
+    border-bottom: none; /* Elimina el borde inferior de la última fila */
+  }
+  
+  /* Estilos específicos para algunas columnas */
+  .rank {
+    width: 40px;
+    text-align: center;
+  }
+  
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .coin-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .coin-logo {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .coin-name-full {
+    font-weight: 500; /* Medium */
+    color: #2d3748;
+  }
+  
+  .coin-symbol {
+    color: #718096; /* Gray */
+    font-size: 0.75rem; /* Equivalente a text-xs */
+  }
+  
+  .price {
+    text-align: right;
+  }
+  
+  .change {
+    text-align: right;
+    font-weight: 500;
+  }
+  
+  .change.negative {
+    color: #e53e3e; /* Rojo para cambios negativos */
+  }
+  
+  .change.positive {
+    color: #38a169; /* Verde para cambios positivos */
+  }
+  
+  .volume {
+    text-align: right;
+  }
+  
+  .market-cap {
+    text-align: right;
+  }
+  
+  .chart {
+    text-align: center;
+  }
+  
+  .chart-placeholder {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #cbd5e0; /* Placeholder para el gráfico */
+  }
+  
+  /* Estilos para pantallas más grandes (imitando 3xl:text-sm) */
+  @media (min-width: 1600px) { /* Un breakpoint aproximado para 3xl */
+    .crypto-table-header th,
+    .crypto-table-body td {
+      font-size: 0.875rem; /* text-sm */
+    }
+  }
+  
+  /* Estilos para modo oscuro (imitando dark:text-white) */
+  .dark .crypto-table-header th {
+    background-color: #2d3748;
+    color: #fff;
+  }
+  
+  .dark .crypto-table-body td {
+    color: #fff;
+    border-bottom-color: #4a5568;
+  }
+  
+  .dark .coin-name-full {
+    color: #fff;
+  }
+  
+  .dark .coin-symbol {
+    color: #a0aec0;
+  }

@@ -1,0 +1,101 @@
+Proyecto: "Productividad y Hábitos Pro"
+Objetivo: Desarrollar una aplicación que permita al usuario registrar horas de estudio, ejercicio y limpieza, y visualizar su progreso a lo largo del tiempo mediante gráficos interactivos.
+
+Tecnologías Clave:
+
+Backend (Python):
+Framework Web: Flask o Django (Flask es más ligero para empezar, Django si planeas una escalabilidad más grande).
+Base de Datos: SQLAlchemy (ORM) con PostgreSQL o SQLite (para prototipo/local).
+Librerías de Procesamiento de Datos: Pandas, NumPy.
+Librerías de Autenticación/Autorización: Flask-Login / Django's built-in auth.
+API REST: Flask-RESTful o Django REST Framework.
+
+Librerías de Gráficos: Chart.js, D3.js, Plotly.js (front)
+
+
+Fase 1: Backend Esencial (Python)
+Base de Datos (SQLAlchemy/PostgreSQL):
+Modelos de Datos:
+User: Para gestionar usuarios (autenticación).
+Activity: Una tabla principal para registrar cada entrada.
+user_id (Foreign Key a User)
+activity_type (Enum: 'Estudio', 'Ejercicio', 'Limpieza')
+duration_minutes (entero)
+date (fecha, para agrupar por día/semana/mes)
+notes (texto opcional)
+Migraciones: Usar Alembic (con Flask) o las migraciones integradas de Django para gestionar cambios en el esquema de la base de datos.
+API REST (Flask-RESTful / Django REST Framework):
+Endpoints:
+POST /register: Registro de nuevos usuarios.
+POST /login: Inicio de sesión (autenticación con JWT o sesiones).
+POST /activities: Registrar una nueva actividad.
+GET /activities: Obtener todas las actividades del usuario (con filtros por fecha, tipo).
+GET /activities/summary: Obtener datos agregados para gráficos (ej. horas totales por día/semana/mes por tipo de actividad).
+PUT /activities/<id>: Actualizar una actividad existente.
+DELETE /activities/<id>: Eliminar una actividad.
+Lógica de Negocio (Python):
+Validación de datos de entrada.
+Cálculos para sumar duraciones.
+Generación de datos agregados para los gráficos.
+Fase 2: Visualización y Análisis (Python y/o Frontend JS)
+Generación de Datos para Gráficos:
+Desde el backend, crea funciones que, dadas las actividades de un usuario y un rango de fechas, devuelvan datos estructurados (ej. JSON) listos para ser graficados.
+Ejemplos:
+Total de horas por día/semana/mes para cada actividad.
+Distribución porcentual de actividades.
+Tendencia de horas dedicadas a lo largo del tiempo.
+Implementación de Gráficos:
+Opción A (Frontend JS - RECOMENDADO para interacción web):
+El frontend (React/Vue) hará solicitudes a los endpoints /activities/summary.
+Usará Chart.js, D3.js o Plotly.js para renderizar gráficos interactivos como:
+Gráfico de barras: Horas diarias/semanales/mensuales por actividad.
+Gráfico de líneas: Tendencia de horas de estudio/ejercicio/limpieza a lo largo del tiempo.
+Gráfico circular/dona: Distribución porcentual del tiempo dedicado a cada actividad.
+Gráficos apilados: Para mostrar el total de horas de productividad y cómo se distribuyen.
+Opción B (Python para gráficos estáticos o interactivos con Plotly/Bokeh en Dash/Streamlit):
+Si no quieres un frontend JavaScript completo, puedes usar librerías como Plotly o Bokeh directamente en Python para generar gráficos interactivos.
+Luego, podrías usar Dash (construido sobre Flask y React) o Streamlit para servir estos gráficos como una interfaz web simple. Esto es menos flexible que un frontend JS completo, pero más rápido de implementar solo con Python.
+Fase 3: Funcionalidades Avanzadas (para un proyecto "avanzado")
+Objetivos y Seguimiento de Metas:
+Permitir al usuario establecer metas (ej. "30 horas de estudio al mes").
+Mostrar el progreso hacia esas metas en los gráficos.
+Notificaciones Personalizadas:
+Implementar notificaciones (ej. vía email o push notifications si construyes una PWA) si el usuario se está quedando atrás en sus metas o para recordar registrar actividades.
+Tecnologías: Celery (para tareas en segundo plano), smtplib (para emails).
+Gamificación (Opcional pero divertido):
+Puntos, insignias, rachas de días consecutivos.
+Leaderboards (si la app permite compartir, aunque sea de forma anónima).
+Exportación de Datos:
+Permitir exportar los datos registrados en formatos como CSV o JSON.
+Análisis de Tendencias y Predicciones:
+Usar Pandas y Scikit-learn para identificar patrones de productividad.
+(Avanzado) Implementar modelos simples de series de tiempo para predecir cuándo el usuario podría no alcanzar sus metas si continúa con el patrón actual.
+Despliegue (Deployment):
+Desplegar la aplicación en un servicio en la nube (Heroku, AWS Elastic Beanstalk, Google Cloud App Engine, DigitalOcean).
+Uso de Docker y Docker Compose para empaquetar la aplicación y sus dependencias, facilitando el despliegue.
+Estructura del Proyecto (Ejemplo con Flask):
+productividad_app/
+├── app.py                  # Archivo principal de la aplicación Flask
+├── config.py               # Configuraciones (DB, secretos)
+├── models.py               # Definición de modelos de base de datos con SQLAlchemy
+├── routes/
+│   ├── auth.py             # Rutas de autenticación (login, register)
+│   └── activities.py       # Rutas para CRUD de actividades
+├── services/
+│   └── data_analysis.py    # Lógica para procesar datos para gráficos
+├── templates/              # Archivos HTML (si no usas SPA frontend)
+│   ├── index.html
+│   └── ...
+├── static/                 # Archivos estáticos (CSS, JS)
+│   ├── css/
+│   └── js/                 # Aquí iría tu frontend JS con gráficos
+├── migrations/             # Generado por Alembic
+├── venv/                   # Entorno virtual
+├── requirements.txt        # Dependencias de Python
+└── README.md               # Descripción del proyecto
+Consejos Adicionales:
+Itera: Empieza con lo más básico (registro de actividades y un gráfico simple) y ve añadiendo funcionalidades.
+Control de Versiones: Usa Git y GitHub para gestionar tu código.
+Pruebas: Escribe pruebas unitarias y de integración para tu backend.
+Documentación: Documenta tu código y el uso de tu API. Un buen README.md es crucial para tu portafolio.
+UX/UI: Aunque el foco sea Python, una interfaz de usuario agradable hará que tu proyecto brille más. No necesitas ser un diseñador experto, pero busca inspiración en apps de productividad existentes.

@@ -1,0 +1,128 @@
+/* frontend/src/Register/Register.css */
+
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.registerTitle {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    text-align: center;
+}
+
+.registerForm {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.registerInput {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease;
+}
+
+.registerInput:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.registerButton {
+    padding: 12px 20px;
+    background-color: #28a745; /* Color verde para registrar */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.registerButton:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.registerMessage {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #e2f0cb;
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.loginLinkSection {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.loginLinkSection p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.loginLink {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Color azul para login */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1em;
+}
+
+.loginLink:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Sección de registro en el componente Login */
+.registerSection {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.registerSection p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.registerSection .registerButton { /* Reutilizamos el estilo del botón de registro */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c757d; /* Un color neutro para el botón de registro en el Login */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1em;
+}
+
+.registerSection .registerButton:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}

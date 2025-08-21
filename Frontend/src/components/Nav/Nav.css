@@ -1,0 +1,112 @@
+.navContainerwrapeper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #353535;
+   
+    height: 100%;
+    padding: 0 32px 20px;
+    border-right: 2px solid #efeff2;
+    
+    
+    
+   
+}
+
+.navContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.navLinks{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    height: 100%;
+    list-style: none;
+    padding:0 0 1.25rem 0;
+    
+    
+  
+}
+
+.navLink{
+    cursor: pointer;
+    text-align: start;
+    margin: 48px 0 0 0 ;
+    padding: 0 16px;
+    color:rgb(107 114 128);
+    
+}
+
+.navLink:hover{
+    color: #14161A;
+}
+
+.navLink.active {
+    background-color: #14161A;
+    color: #FFFF;
+    padding: 0 16px;
+    border-radius: 50px;
+    width: 100%;
+  }
+
+  .navLink a {
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+    padding: 10px 16px; 
+  }
+
+.navUser{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #efeff2;
+    width: 100%;
+    padding: 0 16px;
+}
+
+
+.navUserImgContainer{
+    display: flex;
+}
+
+.navUserImg{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+}
+.NavUserNameinfoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 155px;
+}
+
+.NavUserNameContainer{
+    height: 50px;
+    width:100%;
+    padding: 10px 0 0 0;
+}
+
+.NavUserNameh3{
+    font-size: 16px;
+
+}
+
+.NavUserNamep{
+    height: 16px;
+    font-size: 12px;
+    width: 100%;
+    color:rgb(107 114 128);
+}

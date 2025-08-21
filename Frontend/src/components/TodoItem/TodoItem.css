@@ -1,0 +1,98 @@
+/* frontend/src/components/TodoItem.css */
+
+.todo-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px; /* Asegura un tamaño mínimo consistente */
+    position: relative; /* Para posibles insignias o efectos */
+}
+
+.todo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item h3 {
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    word-wrap: break-word; /* Para descripciones largas */
+}
+
+.todo-item p {
+    color: #555;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+.todo-item strong {
+    color: #3498db; /* Color para la prioridad */
+}
+
+/* Estilo para tareas completadas */
+.todo-item.completed {
+    opacity: 0.7;
+    border-left: 5px solid #27ae60; /* Borde verde para completadas */
+    background-color: #e9f5ee; /* Fondo ligeramente verde */
+}
+
+.todo-item.completed h3,
+.todo-item.completed p {
+    text-decoration: line-through; /* Tachado para el texto */
+    color: #888; /* Color de texto más tenue */
+}
+
+.status-completed {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: right;
+    margin-top: auto; /* Empuja el texto hacia abajo */
+    padding-top: 10px;
+}
+
+/* Contenedor de botones */
+.todo-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 10px; /* Espacio entre botones */
+    margin-top: 15px; /* Espacio superior */
+}
+
+.complete-btn, .delete-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.complete-btn {
+    background-color: #3498db; /* Azul */
+    color: white;
+}
+
+.complete-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Rojo */
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}

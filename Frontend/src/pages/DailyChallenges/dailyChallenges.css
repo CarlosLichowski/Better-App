@@ -1,0 +1,62 @@
+/* frontend/src/components/ChallengeCard/ChallengeCard.css */
+
+.challengeCardContainer {
+  background-color: #ffffff; /* Fondo blanco para las tarjetas */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px; /* Espacio alrededor de cada tarjeta */
+  text-align: center;
+  width: 250px; /* Ancho fijo para las tarjetas */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease-in-out; /* Animación al pasar el ratón */
+}
+
+.challengeCardContainer:hover {
+  transform: translateY(-5px); /* Pequeño efecto al pasar el ratón */
+}
+
+.challengeCardTitle {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.challengeCardDescription {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Si añadieras una imagen: */
+/*
+.challengeCardImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+*/
+
+.dailychallengescontainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.dailychallengescontainer h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.challengesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajusta el ancho de las columnas */
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px; /* Limita el ancho del grid */
+  margin: 0 auto; /* Centra el grid */
+}

@@ -1,0 +1,7 @@
+.GraphsContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    border: 2px red solid;
+    margin: 40px 0;
+}

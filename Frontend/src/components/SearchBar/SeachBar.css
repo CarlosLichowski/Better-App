@@ -1,0 +1,31 @@
+.SearchBarContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px ;
+}
+
+.LoginBtn {
+    background-color: none;
+    border: none;
+    background-color: #14161A;
+    color: #FFFF;
+    padding: 0 32px;
+    border-radius: 50px;
+    height: 48px;
+    width: 127.7px;
+    cursor: pointer;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

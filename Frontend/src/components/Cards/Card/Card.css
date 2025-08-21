@@ -1,0 +1,14 @@
+.CardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 352px;
+    height: 360px;
+    gap: 25px;
+    
+}
+
+.CardContainer img {
+    height: 25%;
+}

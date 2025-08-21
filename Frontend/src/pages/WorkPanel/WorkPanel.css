@@ -1,0 +1,52 @@
+/* frontend/src/pages/WorkPanel.css (Añade esto al archivo existente) */
+
+/* Estilos para el formulario de nueva tarea */
+.new-task-form {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.new-task-input,
+.new-task-select,
+.new-task-date {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    flex: 1 1 auto; /* Permite que los inputs crezcan */
+    min-width: 150px; /* Ancho mínimo */
+}
+
+.new-task-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #27ae60;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.new-task-button:hover {
+    background-color: #218c54;
+}
+
+/* Opcional: Estilos responsivos para el formulario */
+@media (max-width: 600px) {
+    .new-task-form {
+        flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+        align-items: stretch; /* Estira los elementos para ocupar todo el ancho */
+    }
+
+    .new-task-input,
+    .new-task-select,
+    .new-task-date,
+    .new-task-button {
+        margin-bottom: 10px; /* Espacio entre elementos apilados */
+        min-width: auto; /* Elimina el ancho mínimo en pantallas pequeñas */
+    }
+}

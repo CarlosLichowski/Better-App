@@ -1,0 +1,87 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ 
+  
+  background-color: #f0f0f0;
+}
+
+.loginForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  width: 400px;
+  display: flex ;
+    flex-direction: column; 
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.loginForm input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;   
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.loginForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loginForm button:hover {
+  background-color: #0056b3;
+}
+
+.loginForm a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.loginForm a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .loginContainer {
+    padding: 20px;
+  }
+
+  .loginForm {
+    width: 100%;
+  }
+
+  .loginForm input,
+  .loginForm button {
+    width: calc(100% - 20px);
+  }
+}
+
+/* Additional styles for the login form */
+.loginForm h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.loginForm p {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
